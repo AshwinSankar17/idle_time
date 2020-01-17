@@ -1,13 +1,19 @@
 from distutils.core import setup
+import setuptools
+import os
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(
   name = 'idleTime',         # How you named your package folder (MyLib)
-  packages = [''],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
+  packages = setuptools.find_packages(),   # Chose the same as "name"
+  version = '0.5.0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Usage of module gives the idle time of the computer. Note: Linux requires xprintidle. Use "sudo apt install xprintidle" for the module to work.',   # Give a short description about your library
+  long_description=long_description,
   author = 'S Ashwin',                   # Type in your name
   author_email = 'ashwins1211@gmail.com',      # Type in your E-Mail
-  package_dir={'': '/home/grim_reaper/Documents/Workspace/Python/idle_time'},
+  package_dir={'': os.getcwd()},
   url = 'https://github.com/TheSinOfSloth/idle_time',   # Provide either the link to your github or to your website
   download_url = 'https://github.com/TheSinOfSloth/idle_time/archive/v_02.tar.gz',    # I explain this later on
   keywords = ['idle', 'time', 'xprintidle'],   # Keywords that define your package best
