@@ -21,7 +21,7 @@ else:
     def exec_cmd(cmd_string):
         r = os.popen(cmd_string)
         result_string = r.read()
-        r.close
+        r.close()
         return result_string
 
     def get_idle_duration():
