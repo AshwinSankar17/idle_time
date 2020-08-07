@@ -17,9 +17,15 @@ if (platform.system() == 'Windows'):
         millis = windll.kernel32.GetTickCount() - lastInputInfo.dwTime
         return millis / 1000.0
 
-
 else:
+    def exec_cmd(cmd_string):
+        r = os.popen(cmd_string)
+        result_string = r.read()
+        r.close
+        return result_string
+
     def get_idle_duration():
-        millis = os.system('sudo -u whoami xprintidle')
+        #         millis = os.system('sudo -u whoami xprintidle')
+        millis = int(exec_cmd("xprintidle"))
         os.system('clear')
         return millis / 1000.0
